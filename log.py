@@ -6,4 +6,4 @@ logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s 
 #Exemple
 logging.info('Depasire de temperatura')
 logging.warning(' Dispozitivul a depasit limita')
-logging.error(' înregistrare de eroare')
+logging.error(' ')

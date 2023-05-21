@@ -1,18 +1,16 @@
-import time
+# Importing the library
 import psutil
+import os
+
+# Calling psutil.cpu_precent() for 4 seconds
+print('The CPU usage is: ', psutil.cpu_percent(4))
+
+# Getting loadover15 minutes
+load1, load5, load15 = psutil.getloadavg()
+cpu_usage = (load15 / os.cpu_count()) * 100
 
 
-def display_usage(cpu_usage, mem_usage, bars=50):
-        cpu_percent = (cpu_usage / 100.0)
-        cpu_usage = ' ' * int(cpu_percent * bars) + '-' * (bars - int(cpu_percent * bars))
-
-        mem_percent = (mem_usage / 100.0)
-        mem_bar = ' ' * int(mem_percent * bars) + '-' * (bars - int(mem_percent * bars))
-
-
-        print(f"\rCPU Usage: |{cpu_bar}| {cpu_usage:.2f}% ", end="")
-        print(f" MEM Usage: |{mem_bar}| {mem_usage:.2f}% ", end="\r")
-
-while True:
-    display_usage(psutil.cpu_percent(), psutil.virtual_memory().percent, 30)
-    time.sleep(0.5)
+# Getting % usage of virtual_memory ( 3rd field)
+print('RAM memory % used:', psutil.virtual_memory()[2])
+# Getting usage of virtual_memory in GB ( 4th field)
+print('RAM Used (GB):', psutil.virtual_memory()[3]/1000000000)
