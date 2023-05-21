@@ -1,3 +1,13 @@
+#https://readthedocs.org/
+#https://www.w3schools.com/python/python_intro.asp
+#https://stackoverflow.com/
+#https://www.youtube.com/
+#https://www.geeksforgeeks.org/python-programming-language/
+
+
+#Construiți un script ce monitorizează consumul de resurse și atenționează utilizatorul de atingerea unor
+#limite
+
 import psutil
 import logging
 
